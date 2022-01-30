@@ -36,7 +36,8 @@ const send = () => {
     const data = { 
       x: xCoordinate, 
       y: yCoordinate,
-      playerId: playerId};
+      playerId: playerId,
+      roomId: roomId };
     stompClient.send("/app/hello/" + roomId, {}, JSON.stringify(data));
   }
 }
