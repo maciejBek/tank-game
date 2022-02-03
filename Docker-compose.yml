@@ -5,20 +5,19 @@ services:
         ports:
             - "8080:8080"
         depends_on:
-            - database
+            - mongo
     client:
         build: ./frontend
         ports:
             - "3000:3000"
         depends_on:
-            - api 
+            - api
         stdin_open: true
-#    localhost:
-#        image: postgres
-#        ports:
-#            - "5432:5432"
-#        environment:
-#            - POSTGRES-ROOT-PASSWORD=123456789
-#            - POSTGRES_PASSWORD=123456789
-#            - POSTGRES_USER=postgres
-#            - POSTGRES_DB=carservice
+    mongo:
+        image: mongo
+        restart: always
+        ports:
+            - "27017:27017"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: tank123
+            MONGO_INITDB_ROOT_PASSWORD: tank123
