@@ -2,24 +2,19 @@ package pl.company.tankgame;
 
 public class Coordinates {
 
-    private Integer playerId;
     private Integer x;
     private Integer y;
+    private Integer roomId;
+    private Integer playerId;
 
     public Coordinates() {
+
     }
 
-    public Coordinates(Integer playerId, Integer x, Integer y) {
-        this.playerId = playerId;
+    public Coordinates(Integer x, Integer y, Integer roomId, Integer playerId) {
         this.x = x;
         this.y = y;
-    }
-
-    public Integer getPlayerId() {
-        return playerId;
-    }
-
-    public void setPlayerId(Integer playerId) {
+        this.roomId = roomId;
         this.playerId = playerId;
     }
 
@@ -37,5 +32,21 @@ public class Coordinates {
 
     public void setY(Integer y) {
         this.y = y;
+    }
+
+    public Integer getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(Integer roomId) {
+        this.roomId = roomId;
+    }
+
+    public Integer getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
     }
 }
