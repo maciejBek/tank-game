@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\redux",
+    "\\src\\components\\state",
+    "\\src\\components\\utils",
+    "\\src\\js"
+  ],
+  "SelectedNode": "\\src\\components\\state\\Tank.js",
+  "PreviewInSolutionExplorer": false
+}

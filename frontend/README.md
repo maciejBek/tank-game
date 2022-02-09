@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 1. INTRODUCTION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1.1 PURPOSE
 
-## Available Scripts
+The purpose of this document is to build an online game, a remake of legendary Famicom game “Battle City”.
 
-In the project directory, you can run:
+## 1.2 INTENDED AUDIENCE AND READING SUGGESTIONS
 
-### `npm start`
+This project has been implemented as part of university course “Software System Engineering”, under the guidance of professors. It’s only a prototype of old game for new experience of online gaming process. You can easily improve coordination and memory. The tank’s movements that occur on the screen depend on a keyboard control, which improves coordination, and the development of the game has rules, objectives and paths that stimulate short and long term memory. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1.3 PROJECT SCOPE
+The purpose of the online game is to allow you to play the old Famicom game “Battle City” using only the Internet and a standard browser. The game is based on ReactJS technology, using Redux and a relational database with user's progress. In future, we hope to provide a comfortable gaming experience, free to use, with personal tanks constructor and the ability to play in any device.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 2. OVERALL DESCRIPTION
+## 2.1 DISTRIBUTED DATABASE:
 
-### `npm test`
+A battlecity database system stores the following user's information:
+-	User name (login);
+-	Hashed password;
+-	Email address;
+-	Current level (we implemented only four level, but even this is hard to win);
+-	Number of all destroyed enemies;
+-	Number of all fails;
+-	User tank (in future, we will give a chance to choose user tank in options).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 2.2 PLAYER CLASS and CHARACTERISTICS
 
-### `npm run build`
+The player, controlling a tank, must destroy enemy tanks in each level, which enter the playfield from the top of the screen. The enemy tanks attempt to destroy the player's base (represented on the map as an eagle), as well as the human tank itself. A level is completed when the player destroys all 20 enemy tanks, but the game ends if the player's base is destroyed or the player loses all available lives.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The system will support some user privileges, changing tanks design (and opportunities) and extra lives. Player will have a chance to buy new life (its costs 50 points). One destroyed enemy gives 10 points.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Player can control tank using the following keys:
+-	W (to move up)
+-	S (to move down)
+-	A (to move left)
+-	D (to move right)
+-	↑ (to move up)
+-	↓ (to move down)
+-	← (to move left)
+-	→ (to move right)
+-	Space (to shoot)
+-	ESC (take a pause)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If player wants, he can reset progress to start (level 1, all point lost).
 
-### `npm run eject`
+## 2.3 OPERATING ENVIRONMENT
 
-**Note: this is a one-way operation. Once you `eject`, you canâ€™t go back!**
+Operating environment for gaming is listed below.
+-	JavaScript support;
+-	Operating system: Windows, Linux, MAC OS.
+-	PHP, Node.js, ReactJS 
+-	Edge 16+
+-	Firefox 60+
+-	Chrome 61+
+-	Opera 40+
+-	Safari 11+
+-	MySQL
 
-If you arenâ€™t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 2.4	DESIGN and IMPLEMENTATION CONSTRAINTS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point youâ€™re on your own.
+1.	Screen ratio and resolution - ideally game should fit entirely within the user’s screen
+2.	Device whether laptop or desktop (optional) 
+3.	Client-server architecture
+4.	Web-based
+5.	Security of game play
+6.	SQL commands for above queries/applications
+7.	Implement the database at least using a centralized database management system.
 
-You donâ€™t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldnâ€™t feel obligated to use this feature. However we understand that this tool wouldnâ€™t be useful if you couldnâ€™t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 2.5 ASSUMPTION DEPENDENCIES
+-	Good Internet speed
+-	JavaScript support
+-	Hardware (user’s processor must be fast enough to handle GPU calls in)
+-	Operating system: Windows, Linux, MAC OS
+-	PHP 
+-	Edge 16+
+-	Firefox 60+
+-	Chrome 61+
+-	Safari 11+
+-	Server must be able to run node.js applications
+-	Server must have MySQL installed
+-	Controlling only by keyboard.
