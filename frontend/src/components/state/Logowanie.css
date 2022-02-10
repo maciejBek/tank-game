@@ -1,0 +1,146 @@
+body{
+    background-image: url("pictures/tankwallpaper.jpg");
+    background-size: cover;
+}
+
+#polel{
+    background-repeat:no-repeat;
+    position: absolute;
+    left: 73%;
+    top: 8%;
+    background-color: #FFD70B;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+}
+
+#logol{
+    margin-top: 20px;
+    margin-left: 20px;
+    background-image: url("pictures/wrench.png");
+    background-size: 80px 80px;
+    width: 80px;
+    height: 80px;
+}
+
+
+#logowaniel{
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.7) ;
+    height: 500px;
+    width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 0px;
+    margin-top: 9%;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10em black;
+}
+
+.textl{
+    padding-top: 20px;
+    padding-left: 15px;
+    color: white;
+    font-size: 40px;
+}
+
+#pozl{
+    margin-top: 110px;
+}
+
+.pasekl{
+    background-color: #FFD70B;
+    height:52px;
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 500px;
+    border-radius: 5px;
+}
+.inputl{
+    float: right;
+    height: 50px;
+    width: 420px;
+    padding-left: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0px;
+    font-size: 12px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#zdj1l{
+    margin-top: 8px;
+    margin-left: 8px;
+    float: left;
+    background-image: url("pictures/login.png");
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+}
+#zdj2l{
+    margin-top: 8px;
+    margin-left: 8px;
+    float: left;
+    background-image: url("pictures/key.png");
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+}
+
+#przyciskl{
+    float: right;
+    margin-right: 30px;
+    margin-top: 70px;
+}
+
+#przycisk1l{
+    background-color: #FFD70B;
+    border: 0px;
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-size: 11px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#przycisk1l:hover{
+    background-color: #FFF20B;
+    border: 0px;
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#rejl{
+    color: white;
+    margin-top: 160px;
+    margin-left: 40px;
+}
+
+#rejel{
+    padding-left: 5px;
+    color: #FFD70B;
+    text-decoration: none;
+}
+
+#bladl{
+    position: absolute;
+    float: left;
+    color: red;
+    margin-left: 50px;
+    margin-top: 30px;
+    display: none;
+}
+
+#dobrzel{
+    position: absolute;
+    float: left;
+    color: forestgreen;
+    margin-left: 50px;
+    margin-top: 30px;
+    display: none;
+}
+
