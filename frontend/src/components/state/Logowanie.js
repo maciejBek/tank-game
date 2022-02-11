@@ -3,7 +3,9 @@ import './Logowanie.css';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const CAR_REST_API_URL = 'http://localhost:8080/api/accounts/login';
+
+const LOGIN_REST_API_URL = 'http://localhost:8080/api/login';
+
 
 const Linkk = () =>{
     return(
@@ -34,8 +36,8 @@ class Logowanie extends React.Component {
         });
     }
 
+
     handleSubmit(event) {
-        // getting data from form and putting to json string to body array
         let account = document.getElementById('accountl');
         let formData = new FormData(account);
 
@@ -55,32 +57,20 @@ class Logowanie extends React.Component {
                 // add car to database with post method
                 axios({
                     method: "post",
-                    url: CAR_REST_API_URL,
+                    url: LOGIN_REST_API_URL,
                     data: body,
                     headers: {"Content-Type": "application/JSON"},
                 })
 
                     .then(function (response) {
-                        console.log(response.data)
-                        const data =(response.data);
-                        sessionStorage.setItem("id", response.data.id);
-                        console.log(data.accountKind)
-                        document.getElementById('dobrzel').style.display = "inline";
-                        if(data.accountKind == "admin"){
-                            document.getElementById('admin').click();
-                        }
-                        if(data.accountKind == "employee"){
-                            document.getElementById('pracownik').click();
-                        }
-                        if(data.accountKind == "customer"){
-                            document.getElementById('klient').click();
-                        }
+                        //console.log(response.data)
+                        
                         
                         
                     })
                     .catch(function (response) {
-                        const errorData =(response.response.data);
-                        console.log(errorData.error)
+                        
+                        //console.log(errorData.error)
                         document.getElementById('pasek0').style.border="3px solid red";
                         document.getElementById('pasek1').style.border="3px solid red";
                         document.getElementById('bladl').style.display = "inline";
