@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const CAR_REST_API_URL = 'http://localhost:8080/api/accounts';
+const REGISTRATION_REST_API_URL = 'http://localhost:8080/api/registration';
 
 
 
@@ -93,11 +93,12 @@ class Rejestracja extends React.Component {
             console.log(data)
 
             let body = JSON.stringify(data);
+            console.log(body)
 
             // add car to database with post method
             axios({
                 method: "post",
-                url: CAR_REST_API_URL,
+                url: REGISTRATION_REST_API_URL,
                 data: body,
                 headers: {"Content-Type": "application/JSON"},
             })
@@ -105,9 +106,6 @@ class Rejestracja extends React.Component {
                 .then(function (response) {
                     console.log(response)
                     document.getElementById('dobrze').style.display = "inline";
-                    sessionStorage.setItem("emailAddress", email);
-                    sessionStorage.setItem("username", login);
-                    sessionStorage.setItem("password", haslo1);
                     document.getElementById('to').click();
                 })
                 .catch(function (response) {
@@ -152,7 +150,7 @@ class Rejestracja extends React.Component {
                     <div id="poz">
                         <div className="pasek" id="pasek0">
                             <div id="zdj3"></div>
-                            <input className="input" id="email" type="text" name="emailAddress" placeholder="E-mail" value={this.state.value} onChange={this.handleChange}/>
+                            <input className="input" id="email" type="text" name="email" placeholder="E-mail" value={this.state.value} onChange={this.handleChange}/>
                         </div>
                         <div className="pasek" id="pasek1">
                             <div id="zdj1"></div>
@@ -188,7 +186,7 @@ class Rejestracja extends React.Component {
 
                     <div id="przycisk">
                         <input id="przycisk1" type="submit" value="Zarejestruj sie" />
-                        <Link id="to" to="/Rejestracja2"/>
+                        <Link id="to" to="/"/>
                     </div>
 
                 </form>
