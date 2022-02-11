@@ -63,14 +63,13 @@ class Logowanie extends React.Component {
                 })
 
                     .then(function (response) {
-                        //console.log(response.data)
-                        
-                        
+                        console.log(response)
+                        document.getElementById("gra").click()
                         
                     })
                     .catch(function (response) {
                         
-                        //console.log(errorData.error)
+                        console.log(response)
                         document.getElementById('pasek0').style.border="3px solid red";
                         document.getElementById('pasek1').style.border="3px solid red";
                         document.getElementById('bladl').style.display = "inline";
@@ -118,6 +117,7 @@ class Logowanie extends React.Component {
                 <div id="rejl">Nie masz jeszcze konta?
 
                 <Linkk></Linkk>
+                <Link id="gra" to="game"></Link>
 
                 </div>
                 
