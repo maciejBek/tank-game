@@ -13,7 +13,7 @@ services:
         depends_on:
             - api
         stdin_open: true
-    mongo:
+    tankgamedb:
         image: mongo
         restart: always
         ports:

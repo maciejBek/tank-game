@@ -1,60 +1,58 @@
 package pl.company.tankgame;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
 public class UserController {
 
+    @Autowired
     private UserRepository userRepository;
 
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
-    @GetMapping(value = "/users/", produces = "application/json")
-    public ResponseEntity<?> getUserByEmail(@RequestBody String email) {
-        return this.userRepository.findUserByEmail(email)
-    }
 
-    @PostMapping("/users")
-    public ResponseEntity<?> addUser(@RequestBody User user) {
+    @GetMapping(value = "/users", produces = "application/json")
+    public ResponseEntity<List<User>> getAllUsers() {
         try {
-            User userToAdd = new User(user.getUsername(), user.getPassword(), user.getEmail());
-            String addedUserId = this.userRepository.save(userToAdd).getId();
-
-            return new ResponseEntity<>(Map.of("id", addedUserId), HttpStatus.CREATED);
+            List<User> users = new ArrayList<User>(userRepository.findAll());
+            if (users.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(users, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PostMapping("/addBook")
-    public String saveBook(@RequestBody Book book) {
-        repository.save(book);
-        return "Added book with id : " + book.getId();
+    @PostMapping("/login")
+    public ResponseEntity<User> getUserByUsername(@RequestBody UserLoginDto user ){
+
+        try {
+            List<User> userData = userRepository.findUserByUsernameAndPassword(user.getUsername(), user.getPassword());
+            return new ResponseEntity<>(userData.get(0), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @GetMapping("/findAllBooks")
-    public List<Book> getBooks() {
-        return repository.findAll();
+
+    @PostMapping("/registration")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        try {
+            User _user = userRepository.save(new User(user.getUsername(), user.getPassword(), user.getEmail()));
+            return new ResponseEntity<>(_user, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    @GetMapping("/findAllBooks/{id}")
-    public Optional<Book> getBook(@PathVariable int id) {
-        return repository.findById(id);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public String deleteBook(@PathVariable int id) {
-        repository.deleteById(id);
-        return "book deleted with id : " + id;
-    }
 
 }
