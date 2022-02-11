@@ -15,16 +15,16 @@ public class UserService {
         this.userRepository = userRepository;
     }
 //
-    public ResponseEntity<?> getUserByEmail(String email) {
-        Optional<User> userData = this.userRepository.findUserByEmail(email);
-        if (userData.isPresent()) {
-            User fetchedUser = userData.get();
-            return new ResponseEntity<>(fetchedUser, HttpStatus.OK);
-        } else {
-            ErrorResponse errorResponse = new ErrorResponse("user-does-not-exist");
-            return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-        }
-    }
+//    public ResponseEntity<?> getUserByEmail(String email) {
+//        Optional<User> userData = this.userRepository.findUserByEmail(email);
+//        if (userData.isPresent()) {
+//            User fetchedUser = userData.get();
+//            return new ResponseEntity<>(fetchedUser, HttpStatus.OK);
+//        } else {
+//            ErrorResponse errorResponse = new ErrorResponse("user-does-not-exist");
+//            return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+//        }
+//    }
 //
 //    public ResponseEntity<?> addUser(UserRegistrationDto userRegistrationDto) {
 //        String username = userRegistrationDto.getUsername();

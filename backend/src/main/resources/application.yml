@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: tankgame
+      host: tankgamedb
+      port: 27017
+      password: tank123
+      username: tank123
