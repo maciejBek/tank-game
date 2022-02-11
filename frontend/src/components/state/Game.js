@@ -12,7 +12,7 @@ import { gameOverAction, playingAction, playingMultiAction, startScreenAction } 
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 
-import Observer from './test';
+
 
 var connected = false;
 var socket ='';
@@ -39,8 +39,7 @@ const join = () => {
 }
 
 export const send = () => {
-    const observer = new Observer();
-    console.log(observer.pokaz)
+    
 
     let playerId = document.getElementById("player-id").value; //pobrac id od biezacego gracza
     let xCoordinate = document.getElementById("x-coordinate").value;

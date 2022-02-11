@@ -2,11 +2,12 @@ import React from 'react';
 import './Logowanie.css';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import './test'
 
 
 const LOGIN_REST_API_URL = 'http://localhost:8080/api/login';
 
-
+ 
 const Linkk = () =>{
     return(
         <Link id="rejel" to="Rejestracja">Dołacz do nas</Link>
@@ -23,6 +24,7 @@ class Logowanie extends React.Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.funkcja = this.funkcja.bind(this);
 
     }
 
@@ -35,6 +37,12 @@ class Logowanie extends React.Component {
             [name]: value
         });
     }
+
+    // funkcja() {
+    //     const observer = new Observer();
+    //     observer.pokaz()
+    //   }
+   
 
 
     handleSubmit(event) {
