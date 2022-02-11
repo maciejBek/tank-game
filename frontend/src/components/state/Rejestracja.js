@@ -106,23 +106,23 @@ class Rejestracja extends React.Component {
                 .then(function (response) {
                     console.log(response)
                     document.getElementById('dobrze').style.display = "inline";
-                    //document.getElementById('to').click();
+                    document.getElementById('to').click();
                 })
                 .catch(function (response) {
                     console.log(response)
-                    // const error =(response.data.error);
-                    // console.log(error.error)
-                    // if(error.error == "email-address-and-username-exist"){
-                    //     document.getElementById('pasek0').style.border="3px solid red";
-                    //     document.getElementById('pasek1').style.border="3px solid red";
-                    //     document.getElementById('blad1').style.display = "inline";
-                    // }else if(error.error == "email-address-exists"){
-                    //     document.getElementById('pasek0').style.border="3px solid red";
-                    //     document.getElementById('blad2').style.display = "inline";
-                    // }else if(error.error == "username-exists"){
-                    //     document.getElementById('pasek1').style.border="3px solid red";
-                    //     document.getElementById('blad3').style.display = "inline";
-                    // }
+                    const error =(response.data.error);
+                    console.log(error.error)
+                    if(error.error == "email-address-and-username-exist"){
+                        document.getElementById('pasek0').style.border="3px solid red";
+                        document.getElementById('pasek1').style.border="3px solid red";
+                        document.getElementById('blad1').style.display = "inline";
+                    }else if(error.error == "email-address-exists"){
+                        document.getElementById('pasek0').style.border="3px solid red";
+                        document.getElementById('blad2').style.display = "inline";
+                    }else if(error.error == "username-exists"){
+                        document.getElementById('pasek1').style.border="3px solid red";
+                        document.getElementById('blad3').style.display = "inline";
+                    }
 
                 }).catch(function (response) {
                 //handle error
