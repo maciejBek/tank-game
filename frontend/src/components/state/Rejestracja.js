@@ -32,12 +32,6 @@ class Rejestracja extends React.Component {
         });
     }
 
-    componentDidMount(){
-        while(1){
-        console.log("tralalal")
-        }
-
-    }
 
     handleSubmit(event) {
         // getting data from form and putting to json string to body array
