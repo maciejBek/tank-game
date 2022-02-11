@@ -13,9 +13,9 @@ import java.util.stream.Stream;
 @Repository
 public interface UserRepository extends MongoRepository<User, Integer> {
 
-    //Optional<User> findUserByEmail(String email);
-    List<User> findUserByEmail(String email);
+    List<User> findUserByUsernameAndEmail(String username, String email);
     List<User> findUserByUsername(String username);
+    List<User> findUserByEmail(String username);
     List<User> findUserByUsernameAndPassword(String username, String password);
 
 }

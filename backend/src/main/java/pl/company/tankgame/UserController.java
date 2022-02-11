@@ -45,13 +45,30 @@ public class UserController {
 
 
     @PostMapping("/registration")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody User user) {
+
+//        try {
+//            userRepository.findUserByUsername(user.getUsername());
+//            return new ResponseEntity<>(createError("username-exists"), HttpStatus.INTERNAL_SERVER_ERROR);
+//        } catch (Exception ignored) {
+//        }
+//        try {
+//            List<User> userData = userRepository.findUserByEmail(user.getEmail());
+//            return new ResponseEntity<>(createError("email-address-exists"), HttpStatus.INTERNAL_SERVER_ERROR);
+//        } catch (Exception ignored) {
+//        }
+
         try {
             User _user = userRepository.save(new User(user.getUsername(), user.getPassword(), user.getEmail()));
             return new ResponseEntity<>(_user, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+
+    public ResponseEntity<ErrorResponse> createError(String message){
+        return new ResponseEntity<>(new ErrorResponse(message),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
