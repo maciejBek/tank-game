@@ -32,6 +32,13 @@ class Rejestracja extends React.Component {
         });
     }
 
+    componentDidMount(){
+        while(1){
+        console.log("tralalal")
+        }
+
+    }
+
     handleSubmit(event) {
         // getting data from form and putting to json string to body array
         let account = document.getElementById('account');
@@ -139,11 +146,13 @@ class Rejestracja extends React.Component {
 
     render() {
         return (
+            
             //<div id="strona">
             //  <div id="pole" >
             //    <div id="logo"></div>
             //</div>
             <div id="logowanie">
+                {this.pentla}
                 <div className="text">
                     Rejestracja
                 </div>
