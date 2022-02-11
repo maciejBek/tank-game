@@ -106,7 +106,7 @@ class Rejestracja extends React.Component {
                 .then(function (response) {
                     console.log(response)
                     document.getElementById('dobrze').style.display = "inline";
-                    document.getElementById('to').click();
+                    //document.getElementById('to').click();
                 })
                 .catch(function (response) {
                     console.log(response)
