@@ -24,7 +24,7 @@ class Logowanie extends React.Component {
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.funkcja = this.funkcja.bind(this);
+        //this.funkcja = this.funkcja.bind(this);
 
     }
 

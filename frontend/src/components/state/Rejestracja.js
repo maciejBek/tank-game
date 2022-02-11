@@ -109,7 +109,8 @@ class Rejestracja extends React.Component {
                     document.getElementById('to').click();
                 })
                 .catch(function (response) {
-                    const error =(response.response.data);
+                    console.log(response)
+                    const error =(response.data.error);
                     console.log(error.error)
                     if(error.error == "email-address-and-username-exist"){
                         document.getElementById('pasek0').style.border="3px solid red";
