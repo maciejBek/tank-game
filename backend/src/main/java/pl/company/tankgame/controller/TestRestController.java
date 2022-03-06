@@ -1,4 +1,4 @@
-package pl.company.tankgame;
+package pl.company.tankgame.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

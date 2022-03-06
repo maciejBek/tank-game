@@ -1,4 +1,4 @@
-package pl.company.tankgame;
+package pl.company.tankgame.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

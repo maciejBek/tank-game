@@ -1,4 +1,4 @@
-package pl.company.tankgame;
+package pl.company.tankgame.model;
 
 public class Coordinates {
 

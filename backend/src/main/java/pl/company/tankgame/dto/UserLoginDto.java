@@ -1,4 +1,4 @@
-package pl.company.tankgame;
+package pl.company.tankgame.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRegistrationDto {
+public class UserLoginDto {
 
     private String username;
-    private String email;
+    private String password;
 
 }

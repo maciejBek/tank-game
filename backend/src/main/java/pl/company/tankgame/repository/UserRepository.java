@@ -1,14 +1,10 @@
-package pl.company.tankgame;
+package pl.company.tankgame.repository;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
-import pl.company.tankgame.User;
+import pl.company.tankgame.model.User;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, Integer> {
@@ -17,5 +13,4 @@ public interface UserRepository extends MongoRepository<User, Integer> {
     List<User> findUserByUsername(String username);
     List<User> findUserByEmail(String username);
     List<User> findUserByUsernameAndPassword(String username, String password);
-
 }
